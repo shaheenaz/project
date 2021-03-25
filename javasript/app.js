@@ -5,11 +5,11 @@ console.log(userName);
 alert('welcome to our website ' +userName +' ,thank you for choosing us!!') 
 var makeupType = prompt("What type of makeup do you want to view " + userName +"?" + "Hair, Face or Frgrance");
 console.log(makeupType)
-if(makeupType ==='Hair') {
+if(makeupType ==='hair') {
     document.write('<img src="https://s1.1zoom.me/b5050/916/Blonde_girl_Hair_Makeup_Glance_Face_Colored_561554_3840x2160.jpg"/>')
-}else if(makeupType === 'Face'){ 
+}else if(makeupType === 'face'){ 
     document.write('<img src="https://i.pinimg.com/originals/1c/c8/e3/1cc8e3ff956e73d7bbb24961cb7d28f8.jpg"/>')
-}else if(makeupType === 'Frgrance'){
+}else if(makeupType === 'frgrance'){
     document.write('"https://www.fragrancex.com/blog/wp-content/uploads/2019/09/fragrance-notes-everything-you-need-to-know-hero.jpg"/>')
 }else{  
     alert("PLEASE CHOSE A MAKEUP TYPE!!!");
@@ -27,4 +27,4 @@ alert("Thank you!")
 console.log(why)
 alert("Thank you")
 }
-confirm("try")
+confirm("“Beneath the makeup and behind the smile I am just a girl who wishes for the world.”")
