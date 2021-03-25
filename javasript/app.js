@@ -6,11 +6,11 @@ alert('welcome to our website ' +userName +' ,thank you for choosing us!!')
 var makeupType = prompt("What type of makeup do you want to view " + userName +"?" + "Hair, Face or Frgrance");
 console.log(makeupType)
 if(makeupType ==='hair') {
-    document.write('<img src="https://s1.1zoom.me/b5050/916/Blonde_girl_Hair_Makeup_Glance_Face_Colored_561554_3840x2160.jpg"/>')
+    document.write('<img src="https://s1.1zoom.me/b5050/916/Blonde_girl_Hair_Makeup_Glance_Face_Colored_561554_3840x2160.jpg" width=250 height=250/>')
 }else if(makeupType === 'face'){ 
-    document.write('<img src="https://i.pinimg.com/originals/1c/c8/e3/1cc8e3ff956e73d7bbb24961cb7d28f8.jpg"/>')
+    document.write('<img src="https://i.pinimg.com/originals/1c/c8/e3/1cc8e3ff956e73d7bbb24961cb7d28f8.jpg" width=250 height=250/>')
 }else if(makeupType === 'frgrance'){
-    document.write('"https://www.fragrancex.com/blog/wp-content/uploads/2019/09/fragrance-notes-everything-you-need-to-know-hero.jpg"/>')
+    document.write('"https://www.fragrancex.com/blog/wp-content/uploads/2019/09/fragrance-notes-everything-you-need-to-know-hero.jpg"width=250 height=250/>')
 }else{  
     alert("PLEASE CHOSE A MAKEUP TYPE!!!");
     var makeupType = prompt("PLEASE CHOSE NOW!!"+"What type of makeup do you want to view " + userName +"?" + "Hair, Face or Frgrance");
