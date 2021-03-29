@@ -10,7 +10,9 @@ console.log(makeupType)
     while(makeupType!=="hair"&& makeupType!=="face" && makeupType!=="fragrance"){
         makeupType= prompt("please add type")
     }
+    //lab 6
     var muNum = prompt("how many makeup do you want to show?")
+    function userChose(muNum){
     for(var i=1; i<=muNum; i++){if(makeupType ==='hair') {
         document.write('<img src="https://s1.1zoom.me/b5050/916/Blonde_girl_Hair_Makeup_Glance_Face_Colored_561554_3840x2160.jpg" width=250 height=250/>')
     }else if(makeupType === 'face'){ 
@@ -18,14 +20,20 @@ console.log(makeupType)
     } else if(makeupType === "fragrance"){
         document.write('<img src="https://media-exp1.licdn.com/dms/image/C4D1BAQHgPk4ZNIaGkA/company-background_10000/0/1560422318974?e=2159024400&v=beta&t=MThJ7M-y196ufZqt5SKl2RcokpNtzKQHphFC931Obxk" width=250 height=250/>')
     }
-    }
-    console.log(muNum)
+    
+    }}
+     userChose(muNum)
 
 var yourOpinion = prompt("Give us a rate from 1-10");
+function userOp(userOp){
         for(var o=0; o<=yourOpinion;o++){
     if(yourOpinion >=5) {
-        document.write('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" width=100 height=100/>')
+        alert("love you")
         }else if(yourOpinion<5){
-    document.write('<img src="https://static6.depositphotos.com/1002188/648/i/950/depositphotos_6489061-stock-photo-sad-symbol.jpg" width=100 height=100/>')
+            alert("hope you like us next time")
+        }
+        return yourOpinion;
     }}
+    console.log(userOp(yourOpinion))
+
     confirm("“Beneath the makeup and behind the smile I am just a girl who wishes for the world.”")

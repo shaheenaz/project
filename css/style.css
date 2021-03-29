@@ -1,0 +1,42 @@
+header {
+    background-color: rgb(208, 184, 255);height:120%;
+}
+header h1 { 
+ margin: 0%; ;margin: 0px;font-size: xx-large;font-weight: bolder; font-family: Verdana, Geneva, Tahoma, sans-serif;color:rgb(43, 9, 38);
+ ;width: 100%; padding: 0%;border: mediumpurple; float: left;
+}
+header h4{ 
+    text-align: right; font-style: italic; font-size: large;width: 100%; color:rgb(46, 10, 40)
+    ;
+}
+main section{
+    background-color: rgb(238, 206, 234);
+}
+
+header nav{ 
+    float: left; width: 15%; margin-top: 0px; background-color: moccasin; color: rgb(217, 58, 223);
+}
+#home ul a {
+    text-decoration: none;font-style: italic;
+}
+body{
+    background-color: rgb(255, 255, 233);margin:0%;
+}
+main h4{
+    color: rgb(4, 2, 41); font-size: xx-large;font-style:italic; margin-bottom: 50px;text-align: center;
+}
+main h3{
+    color: rgb(179, 11, 103);font-size: xx-large; text-align: center;
+}
+main img{
+   margin-left: 2%;; display: inline-block ; margin-right: 3%; margin-top: 50px ;
+}
+footer p{
+    color: rgb(116, 64, 211); font-size: larger; font-weight: bolder;
+    font-style: oblique; margin-left: 20px; width: 100%; height: 50%; text-align: center;
+     
+}
+footer ul li{
+     color: rgb(173, 13, 173);font-size: large; font-weight: bold;
+    font-family: monospace; width: 30% ;height: 20%;line-height: 25px;
+}
