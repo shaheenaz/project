@@ -1,39 +1,109 @@
-alert("HELLO!!")
-//this id greeting
-var userName = prompt("Whats your name?");
-console.log(userName);
-alert('welcome to our website ' +userName +' ,thank you for choosing us!!') 
-var makeupType = prompt("What type of makeup do you want to view " + userName +"?" + "hair, face or fragrance");
-console.log(makeupType)
-
-    ///LAB 5 ADDITION
-    while(makeupType!=="hair"&& makeupType!=="face" && makeupType!=="fragrance"){
-        makeupType= prompt("please add type")
+3:35
+'use strict'
+const paragraph = document.getElementById('rending')
+let Ingredients=[];
+let Preparation=[];
+function Recipes(userRecipes, userStory, userServing, userTime, userPerfectBreak, userPerfectLunch, userPerfectDinner,userImage) {
+    this.userRecipes = userRecipes;
+    this.userStory = userStory;
+    this.userServing = userServing;
+    this.userTime = userTime;
+    this.userPerfectBreak = userPerfectBreak;
+    this.userPerfectLunch = userPerfectLunch;
+    this.userPerfectDinner = userPerfectDinner;
+    this.userIngred=Ingredients;
+    this.userPreparation=Preparation;
+    this.userImage=userImage;
+}
+Recipes.prototype.render = function () {
+    const container = document.getElementById('showing')
+    let nameOfRecipe = document.createElement('p');
+    container.appendChild(nameOfRecipe);
+    nameOfRecipe.textContent=this.userRecipes
+    let numberOfServing = document.createElement('p');
+    container.appendChild(numberOfServing);
+    numberOfServing.textContent = `For ${this.userServing} People`;
+    let timeOfRecipe = document.createElement('p');
+    container.appendChild(timeOfRecipe);
+    timeOfRecipe.textContent = `Cooking Time: ${this.userTime} Min`;
+    let StoryText = document.createElement('p');
+    container.appendChild(StoryText);
+    StoryText.textContent = this.userStory;
+    let ing = document.createElement('p');
+    container.appendChild(ing);
+    ing.textContent = 'Ingredients';
+    let IngredText = document.createElement('ul');
+    container.appendChild(IngredText);
+    for(let i=0;i<Ingredients.length;i++){
+    let li=document.createElement('li');
+    IngredText.appendChild(li)
+    li.textContent = this.userIngred[i];
     }
-    //lab 6
-    var muNum = prompt("how many makeup do you want to show?")
-    function userChose(muNum){
-    for(var i=1; i<=muNum; i++){if(makeupType ==='hair') {
-        document.write('<img src="https://s1.1zoom.me/b5050/916/Blonde_girl_Hair_Makeup_Glance_Face_Colored_561554_3840x2160.jpg" width=250 height=250/>')
-    }else if(makeupType === 'face'){ 
-        document.write('<img src="https://i.pinimg.com/originals/1c/c8/e3/1cc8e3ff956e73d7bbb24961cb7d28f8.jpg" width=250 height=250/>')
-    } else if(makeupType === "fragrance"){
-        document.write('<img src="https://media-exp1.licdn.com/dms/image/C4D1BAQHgPk4ZNIaGkA/company-background_10000/0/1560422318974?e=2159024400&v=beta&t=MThJ7M-y196ufZqt5SKl2RcokpNtzKQHphFC931Obxk" width=250 height=250/>')
+    let prepr = document.createElement('p');
+    container.appendChild(prepr);
+    prepr.textContent = 'Preparation';
+    let PrepText = document.createElement('ul');
+    container.appendChild(PrepText);
+    for(let i=0;i<Preparation.length;i++){
+    let li=document.createElement('li');
+    PrepText.appendChild(li)
+    li.textContent = this.userPreparation[i];
     }
-    
-    }}
-     userChose(muNum)
-
-var yourOpinion = prompt("Give us a rate from 1-10");
-function userOp(userOp){
-        for(var o=0; o<=yourOpinion;o++){
-    if(yourOpinion >=5) {
-        alert("love you")
-        }else if(yourOpinion<5){
-            alert("hope you like us next time")
-        }
-        return yourOpinion;
-    }}
-    console.log(userOp(yourOpinion))
-
-    confirm("“Beneath the makeup and behind the smile I am just a girl who wishes for the world.”")
+    while(this.userPerfectBreak===true ||this.userPerfectLunch===true||this.userPerfectDinner===true){
+    if(this.userPerfectBreak===true){
+    let fectBreak = document.createElement('p');
+    container.appendChild(fectBreak);
+    fectBreak.textContent = 'Perfect For Breakfast';
+    this.userPerfectBreak=false
+    }else if(this.userPerfectLunch===true){
+    let Lunch = document.createElement('p');
+    container.appendChild(Lunch);
+    Lunch.textContent = 'Perfect For Lunch';
+    this.userPerfectLunch=false
+    }else if(this.userPerfectDinner===true){
+    let Dinner = document.createElement('p');
+    container.appendChild(Dinner);
+    Dinner.textContent = 'Perfect For Dinner';
+    this.userPerfectDinner=false
+    }
+    }
+    let image = document.createElement('img');
+    container.appendChild(image);
+    image.setAttribute("src",`${this.userImage}`)
+    image.setAttribute("width", "450")
+    image.setAttribute("hight", "450")
+    }
+    const form = document.getElementById('dish')
+    form.addEventListener('onclick', myFunction)
+    function myFunction() {
+        event.preventDefault()
+        var Ingred = document.getElementById("myBtn").value;
+        console.log(Ingred);
+        Ingredients.push(Ingred)
+        document.getElementById("myBtn").value=""
+      }
+    form.addEventListener('onclick', preFunction)
+    function preFunction() {
+        event.preventDefault()
+        var preper = document.getElementById("prep").value;
+        console.log(preper);
+        Preparation.push(preper)
+        document.getElementById("prep").value=""
+      }
+// const form = document.getElementById('dish')
+form.addEventListener('submit', handleSubmit)
+function handleSubmit(event) {
+    event.preventDefault()
+    let Recipe = event.target.nameField.value
+    let Story = event.target.recipeStory.value
+    let serving = event.target.serving.value
+    let time = event.target.cookTime.value
+    let perfectBreak = event.target.breakfast.checked
+    let perfectLunch = event.target.lunch.checked
+    let perfectDinner = event.target.dinner.checked
+    let evenImage=event.target.recipeImage.value
+    let newRecipe = new Recipes(Recipe, Story, serving, time, perfectBreak, perfectLunch, perfectDinner,evenImage)
+    console.log(newRecipe );
+    newRecipe.render()
+    // form.removeEventListener('submit', handleSubmit)
+}
